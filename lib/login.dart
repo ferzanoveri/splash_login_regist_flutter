@@ -32,22 +32,49 @@ class _LoginState extends State<Login> {
             child: Image.asset("assets/image.png"),
           ),
         ),
-        SizedBox(height: 20),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(50, 5, 50, 10),
-          child: Row(
-            children: [
-              Text("Username"),
-              SizedBox(width: 10),
-              Expanded(
-                child: Container(
-                  child: TextField(),
-                ),
-              ),
-            ],
-          ),
-        ),
+        SizedBox(height: 40),
+        inputStyle('Username', 'Enter your username'),
+        SizedBox(height: 20,),
+        inputStyle('Password', 'Enter your password'),
       ],
     );
   }
+}
+
+Widget inputStyle(String title, String hintText){
+  return Padding(
+    padding: const EdgeInsets.fromLTRB(50, 5, 50, 10),
+    child: Row(
+      children: [
+        Text(
+          "$title :",
+          style: TextStyle(fontSize: 18),
+        ),
+        SizedBox(width: 10),
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3)
+                )
+              ],
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 10),
+                hintText: hintText
+              ),
+            ),
+          ),
+        )
+      ],
+    ),
+  );
 }
