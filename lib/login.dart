@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -32,10 +33,53 @@ class _LoginState extends State<Login> {
             child: Image.asset("assets/image.png"),
           ),
         ),
-        SizedBox(height: 40),
+        SizedBox(height: 60),
         inputStyle('Username', 'Enter your username'),
         SizedBox(height: 20,),
         inputStyle('Password', 'Enter your password'),
+        SizedBox(height: 60),
+        Container(
+          height: 60,
+          width: 300,
+          decoration: BoxDecoration(
+            color: Colors.tealAccent,
+            borderRadius: BorderRadius.circular(20)
+          ),
+          child: TextButton(
+            onPressed: (){},
+            child: Text(
+              'Login',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.grey
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 10,),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "Don't have an account? ",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.grey[850]
+                ),
+              ),
+              TextSpan(
+                text: 'Register',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.orangeAccent[700],
+                ),
+                recognizer: TapGestureRecognizer()..onTap = () {
+                  Navigator.of(context).pushNamed('/register');
+                }
+              ),
+            ],
+          ),
+        )
       ],
     );
   }
@@ -43,12 +87,12 @@ class _LoginState extends State<Login> {
 
 Widget inputStyle(String title, String hintText){
   return Padding(
-    padding: const EdgeInsets.fromLTRB(50, 5, 50, 10),
+    padding: const EdgeInsets.fromLTRB(45, 5, 20, 10),
     child: Row(
       children: [
         Text(
           "$title :",
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: 20),
         ),
         SizedBox(width: 10),
         Expanded(
