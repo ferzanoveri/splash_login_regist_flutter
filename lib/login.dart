@@ -51,12 +51,12 @@ class _LoginState extends State<Login> {
               'Login',
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.grey
+                color: Colors.black
               ),
             ),
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: 20,),
         RichText(
           text: TextSpan(
             children: [
