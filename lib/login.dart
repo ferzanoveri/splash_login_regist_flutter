@@ -34,7 +34,7 @@ class _LoginState extends State<Login> {
           ),
         ),
         SizedBox(height: 60),
-        inputStyle('Username', 'Enter your username'),
+        inputStyle('Username', 'Enter your username man!'),
         SizedBox(height: 20,),
         inputStyle('Password', 'Enter your password'),
         SizedBox(height: 60),
